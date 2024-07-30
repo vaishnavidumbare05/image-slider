@@ -36,9 +36,7 @@
         .btn-container{
             position:relative;
             margin:0 50px;
-
-
-        }
+          }
         #btn-left{
             width:50px;
             height:50px;
@@ -58,9 +56,89 @@
             cursor: pointer;
 
         }
-        
+        @media (max-width:1280px){
+           .btn-container{
+            position:relative;
+            margin:0 20px;
+          }
+            #btn-left{
+            width:40px;
+            height:40px;
+           position:absolute;
+            top:340px;
+            left:270px;
+            
+        }
+           #btn-right{
+            width:40px;
+            height:40px;
+            position:absolute;
+            top:340px;
+            right:270px;
+     }
+ }
+        @media (max-width:768px){
+           .btn-container{
+            position:relative;
+            margin:0 20px;
+          }
+            #btn-left{
+            width:40px;
+            height:40px;
+           position:absolute;
+            top:340px;
+            left:50px;
+            
+        }
+           #btn-right{
+            width:40px;
+            height:40px;
+            position:absolute;
+            top:340px;
+            right:50px;
+     }
+  }
+       @media (max-width:480px){
 
-        </style>
+        .gallery-container{
+            height:550px;
+            width:440px;
+            display:block;
+            margin:20px auto;
+            box-shadow: 0px 0px 1px 2px rgb(176, 173, 173);
+        }
+
+        #gallery-img{
+            height:450px;
+            width:340px;
+            object-fit: cover;
+            position:relative;
+            left:50px;
+            top:50px;
+            border-radius: 5px;
+           
+        }
+           .btn-container{
+            position:relative;
+            margin:0 20px;
+          }
+            #btn-left{
+            width:30px;
+            height:30px;
+           position:absolute;
+            top:340px;
+            left:10px;
+            
+        }
+           #btn-right{
+            width:30px;
+            height:30px;
+            position:absolute;
+            top:340px;
+            right:10px;
+     }
+}
+</style>
 </head>
 <body>
     <h1 class="product-name">Image Slider</h1>
@@ -73,39 +151,7 @@
     </div>
     </div>
 
-    <script>
-        const imagearray=["./images/product1.jpg",
-                          "./images/product2.jpg",
-                          "./images/product3.jpg",
-                          "./images/product4.jpg",
-                          "./images/product5.jpg"
-        ]
-       
-        let imageindex=0;
-        function prev(){
-            if(imageindex==0){
-                imageindex=imagearray.length-1;
-            }
-            else{
-                imageindex--;
-            }
-
-            const imageElement=document.getElementById("gallery-img");
-            imageElement.src=imagearray[imageindex]
-        }
-
-        function next(){
-            if(imageindex==imagearray.length-1){
-                imageindex=0;
-            }
-            else{
-                imageindex++;
-            }
-
-            const imageElement=document.getElementById("gallery-img");
-            imageElement.src=imagearray[imageindex]
-         }
-    </script>
+    <script src="index.js"></script>
         
 </body>
 </html>
