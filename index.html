@@ -12,20 +12,23 @@
             margin-top:30px;
         }
         .gallery-container{
-            height:460px;
-            width:700px;
+            height:550px;
+            width:660px;
             background-color: #ffffff;
             display:block;
             margin:30px auto;
+            border:1px solid grey;
+            border-radius: 20px;
+            box-shadow: 0px 0px 1px 2px rgb(176, 173, 173);
         }
 
         #gallery-img{
-            height:300px;
+            height:450px;
             width:500px;
             object-fit: cover;
             position:relative;
-            left:100px;
-            top:80px;
+            left:80px;
+            top:50px;
             border-radius: 5px;
            
         }
@@ -40,8 +43,8 @@
             width:50px;
             height:50px;
             position:absolute;
-            top:300px;
-            left:370px;
+            top:340px;
+            left:375px;
             cursor: pointer;
 
 
@@ -50,23 +53,59 @@
             width:50px;
             height:50px;
             position:absolute;
-            top:300px;
-            right:370px;
+            top:340px;
+            right:375px;
             cursor: pointer;
 
         }
+        
 
         </style>
 </head>
 <body>
     <h1 class="product-name">Image Slider</h1>
     <div class="gallery-container">
-        <img src="images/product1.jpg" id="gallery-img">
+        <img src="./images/product1.jpg" id="gallery-img">
       
    
-     <img src="icon/prev.png" id="btn-left" class="btn-container"  >
-    <img src="icon/next.png" id="btn-right" class="btn-container">
+     <img src="icon/prev.png" id="btn-left" class="btn-container" onclick="prev()"  >
+    <img src="icon/next.png" id="btn-right" class="btn-container" onclick="next()">
     </div>
     </div>
+
+    <script>
+        const imagearray=["./images/product1.jpg",
+                          "./images/product2.jpg",
+                          "./images/product3.jpg",
+                          "./images/product4.jpg",
+                          "./images/product5.jpg"
+        ]
+       
+        let imageindex=0;
+        function prev(){
+            if(imageindex==0){
+                imageindex=imagearray.length-1;
+            }
+            else{
+                imageindex--;
+            }
+
+            const imageElement=document.getElementById("gallery-img");
+            imageElement.src=imagearray[imageindex]
+        }
+
+        function next(){
+            if(imageindex==imagearray.length-1){
+                imageindex=0;
+            }
+            else{
+                imageindex++;
+            }
+
+            const imageElement=document.getElementById("gallery-img");
+            imageElement.src=imagearray[imageindex]
+         }
+    </script>
+        
 </body>
 </html>
